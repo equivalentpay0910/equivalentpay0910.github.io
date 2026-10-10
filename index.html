@@ -3,138 +3,159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Esha Hooda | Data Science &amp; Agentic AI</title>
+<title>Esha Hooda | Software, ML &amp; Agentic AI</title>
+<meta name="description" content="Esha Hooda: Data Science student at SJSU building agentic AI, RAG systems and data pipelines. Open to Summer 2027 SWE, ML + data science internships.">
 <style>
   :root {
-    --ivory: #F7F3EA;
-    --ivory-2: #EFE9DA;
+    --bg: #FFFFFF;
+    --bg-2: #FFFBEA;
     --card: #FFFFFF;
-    --indigo: #2B2A6B;
-    --indigo-soft: #4C4A96;
-    --marigold: #E3A72F;
-    --marigold-dark: #9C6F17;
-    --ink: #3A3830;
-    --muted: #6B6858;
-    --line: #DDD5C2;
+    --primary: #24211A;
+    --primary-mid: #5A4A12;
+    --accent: #9A6A00;
+    --tint: #FFF1BF;
+    --ink: #2B2924;
+    --muted: #6B6556;
+    --line: #EDE2BF;
     --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     --mono: "SF Mono", "Consolas", "Liberation Mono", Menlo, monospace;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    background: var(--ivory);
+    background: var(--bg);
     color: var(--ink);
     font-family: var(--sans);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-  a { color: var(--indigo-soft); text-decoration: none; }
-  a:hover { color: var(--indigo); }
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--marigold-dark); outline-offset: 3px; }
+  a { color: var(--primary-mid); text-decoration: none; }
+  a:hover { color: var(--primary); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  strong { color: var(--primary); font-weight: 700; }
 
-  .wrap { max-width: 920px; margin: 0 auto; padding: 0 28px; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 28px; }
 
   /* ---------- NAV ---------- */
   nav {
     position: sticky; top: 0; z-index: 50;
-    background: rgba(247,243,234,0.92);
+    background: rgba(255,255,255,0.92);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--line);
   }
-  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
-  .nav-name { font-weight: 700; letter-spacing: 0.3px; color: var(--indigo); }
-  .nav-links { display: flex; gap: 26px; font-family: var(--mono); font-size: 13px; }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 16px; }
+  .nav-name { font-weight: 700; letter-spacing: 0.3px; color: var(--primary); white-space: nowrap; }
+  .nav-links { display: flex; gap: 24px; font-family: var(--mono); font-size: 13px; }
   .nav-links a { color: var(--muted); }
-  .nav-links a:hover { color: var(--indigo); }
-  .nav-num { color: var(--marigold-dark); margin-right: 4px; }
+  .nav-links a:hover { color: var(--primary); }
+  @media (max-width: 600px) {
+    .wrap { padding: 0 16px; }
+    .nav-links { gap: 12px; font-size: 11.5px; }
+    .nav-name { font-size: 14px; }
+  }
+  @media (max-width: 420px) { .nav-links a.opt { display: none; } }
 
   /* ---------- HERO ---------- */
-  .hero { padding: 88px 0 60px; display: flex; gap: 48px; align-items: center; flex-wrap: wrap; }
-  .hero-text { flex: 1; min-width: 320px; }
+  .hero { background: linear-gradient(180deg, var(--bg-2) 0%, var(--bg) 100%); padding: 80px 0 60px; }
+  .hero-inner { display: flex; gap: 48px; align-items: center; flex-wrap: wrap; }
+  .hero-text { flex: 1; min-width: 280px; }
   .hero-photo { flex-shrink: 0; }
   .hero-photo img {
-    width: 168px; height: 168px; border-radius: 50%; object-fit: cover;
-    border: 4px solid var(--card);
-    box-shadow: 0 0 0 1px var(--line);
+    width: 180px; height: 180px; border-radius: 50%; object-fit: cover; object-position: center 30%;
+    border: 5px solid var(--card);
+    box-shadow: 0 0 0 2px var(--tint), 0 8px 24px rgba(120,90,0,0.12);
   }
+  @media (max-width: 600px) {
+    .hero { padding: 40px 0 48px; }
+    .hero-inner { gap: 24px; }
+    .hero-photo { order: -1; }
+    .hero-photo img { width: 120px; height: 120px; }
+  }
+  .open-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--tint); color: var(--primary);
+    font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 20px; margin-bottom: 18px;
+  }
+  .open-dot { width: 8px; height: 8px; border-radius: 50%; background: #E0A800; }
   .eyebrow {
-    font-family: var(--mono); font-size: 13px; letter-spacing: 2px;
-    color: var(--muted); text-transform: uppercase; margin-bottom: 8px;
+    font-family: var(--mono); font-size: 12.5px; letter-spacing: 1.2px;
+    color: var(--muted); text-transform: uppercase; margin-bottom: 4px;
   }
-  .eyebrow-line2 { font-size: 13px; color: var(--muted); font-family: var(--mono); margin-bottom: 20px; }
+  .eyebrow-line2 { font-size: 12.5px; color: var(--muted); font-family: var(--mono); margin-bottom: 20px; }
   h1 {
     font-size: clamp(32px, 5vw, 48px);
     font-weight: 700; line-height: 1.12; letter-spacing: -0.5px;
-    color: var(--indigo); margin-bottom: 18px;
+    color: var(--primary); margin-bottom: 18px;
   }
-  .tagline {
-    font-size: 18px; color: var(--ink); max-width: 520px; margin-bottom: 32px;
-  }
+  .tagline { font-size: 18px; color: var(--ink); max-width: 560px; margin-bottom: 30px; }
   .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
   .btn {
     font-family: var(--sans); font-weight: 600; font-size: 14px;
     padding: 11px 20px; border-radius: 6px; border: 1px solid var(--line);
     display: inline-flex; align-items: center; gap: 8px; transition: all 0.15s ease;
   }
-  .btn-primary { background: var(--marigold); color: #3A2A05; border-color: var(--marigold); }
-  .btn-primary:hover { background: var(--marigold-dark); color: var(--ivory); }
-  .btn-ghost { color: var(--indigo); background: var(--card); }
-  .btn-ghost:hover { border-color: var(--indigo); }
+  .btn svg { width: 17px; height: 17px; fill: currentColor; flex-shrink: 0; }
+  .btn-primary { background: #F5C518; color: #24211A; border-color: #F5C518; }
+  .btn-primary:hover { background: #E0B000; color: #24211A; }
+  .btn-ghost { color: var(--primary); background: var(--card); }
+  .btn-ghost:hover { border-color: #F5C518; color: var(--primary); }
 
   /* ---------- SECTIONS ---------- */
-  section { padding: 52px 0; border-top: 1px solid var(--line); }
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  section.alt { background: var(--bg-2); }
   .section-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 30px; }
-  .section-num { font-family: var(--mono); color: var(--marigold-dark); font-size: 13px; }
-  h2 { font-size: 25px; font-weight: 700; color: var(--indigo); }
+  .section-num { font-family: var(--mono); color: var(--accent); font-size: 13px; }
+  h2 { font-size: 25px; font-weight: 700; color: var(--primary); }
 
-  .about-text { font-size: 16px; color: var(--ink); max-width: 700px; }
+  .about-text { font-size: 16px; color: var(--ink); max-width: 720px; }
   .about-text p { margin-bottom: 18px; }
 
   /* ---------- PROJECTS ---------- */
   .project {
     background: var(--card); border: 1px solid var(--line); border-radius: 10px;
-    padding: 24px 26px; margin-bottom: 16px; transition: border-color 0.15s ease;
+    padding: 24px 26px; margin-bottom: 16px; transition: border-color 0.15s ease, box-shadow 0.15s ease;
   }
-  .project:hover { border-color: var(--marigold); }
+  .project:hover { border-color: #F5C518; box-shadow: 0 4px 16px rgba(120,90,0,0.07); }
   .project-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 8px; flex-wrap: wrap; }
-  .project-title { font-size: 17px; font-weight: 700; color: var(--indigo); }
-  .project-link { font-family: var(--mono); font-size: 12px; color: var(--indigo-soft); white-space: nowrap; }
-  .project-tools { font-family: var(--mono); font-size: 12.5px; color: var(--marigold-dark); margin-bottom: 10px; line-height: 1.5; }
+  .project-title { font-size: 17px; font-weight: 700; color: var(--primary); }
+  .project-meta { font-family: var(--mono); font-size: 12px; color: var(--muted); white-space: nowrap; }
+  .project-link { font-family: var(--mono); font-size: 12px; color: var(--primary-mid); white-space: nowrap; }
+  .project-tools { font-family: var(--mono); font-size: 12.5px; color: var(--accent); margin-bottom: 10px; line-height: 1.5; }
   .project-desc { color: var(--ink); font-size: 14.5px; }
 
   /* ---------- EXPERIENCE TREE ---------- */
-  .tree-root {
-    text-align: center; margin-bottom: 8px;
-  }
+  .tree-root { text-align: center; margin-bottom: 8px; }
   .tree-root-node {
     display: inline-flex; align-items: center; justify-content: center;
-    background: var(--indigo); color: var(--ivory);
+    background: #F5C518; color: #24211A;
     font-weight: 700; font-size: 15px;
     width: 168px; height: 64px; border-radius: 50%;
   }
   .tree-lines { height: 50px; position: relative; max-width: 700px; margin: 0 auto; }
   .tree-lines svg { width: 100%; height: 100%; display: block; }
   .tree-branches {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
-    max-width: 900px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+    max-width: 960px; margin: 0 auto;
   }
-  @media (max-width: 720px) { .tree-branches { grid-template-columns: 1fr; } .tree-lines { display: none; } }
+  @media (max-width: 760px) { .tree-branches { grid-template-columns: 1fr; } .tree-lines { display: none; } }
   .branch-head {
     font-family: var(--mono); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
-    color: var(--marigold-dark); text-align: center; margin-bottom: 14px; font-weight: 700;
+    color: var(--accent); text-align: center; margin-bottom: 14px; font-weight: 700;
   }
-  .exp-item { margin-bottom: 20px; }
-  .exp-top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 2px; }
-  .exp-role { font-weight: 700; font-size: 15px; color: var(--indigo); }
-  .exp-date { font-family: var(--mono); font-size: 11.5px; color: var(--muted); }
-  .exp-org { color: var(--indigo-soft); font-size: 13px; margin-bottom: 6px; }
+  .exp-item {
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    padding: 16px 18px; margin-bottom: 14px;
+  }
+  .exp-role { font-weight: 700; font-size: 15px; color: var(--primary); }
+  .exp-date { font-family: var(--mono); font-size: 11.5px; color: var(--muted); margin-bottom: 6px; }
+  .exp-org { color: var(--primary-mid); font-size: 13px; }
   .exp-desc { color: var(--ink); font-size: 13.5px; }
 
   /* ---------- SKILLS ---------- */
   .skill-groups { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
   @media (max-width: 640px) { .skill-groups { grid-template-columns: 1fr; } }
   .skill-group-title {
-    font-family: var(--mono); font-size: 12px; letter-spacing: 1.5px; color: var(--marigold-dark);
+    font-family: var(--mono); font-size: 12px; letter-spacing: 1.5px; color: var(--accent);
     text-transform: uppercase; margin-bottom: 12px; font-weight: 700;
   }
   .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -142,13 +163,18 @@
     font-size: 12.5px; padding: 5px 12px; border-radius: 20px;
     border: 1px solid var(--line); background: var(--card); color: var(--ink);
   }
+  a.skill-tag:hover { border-color: var(--accent); }
 
-  /* ---------- FOOTER ---------- */
-  footer { padding: 56px 0 80px; text-align: center; }
-  .footer-cta { font-size: 19px; color: var(--indigo); font-weight: 500; max-width: 480px; margin: 0 auto 28px; }
-  .footer-links { display: flex; justify-content: center; gap: 26px; margin-bottom: 22px; flex-wrap: wrap; }
-  .footer-links a { font-family: var(--mono); font-size: 14px; }
-  .footer-note { color: var(--muted); font-size: 13px; }
+  /* ---------- FOOTER / CTA ---------- */
+  footer { padding: 64px 0 80px; text-align: center; background: #F5C518; color: #24211A; }
+  footer h2 { color: #24211A; font-size: 28px; margin-bottom: 12px; }
+  .footer-cta { font-size: 17px; color: #3A3528; max-width: 560px; margin: 0 auto 28px; }
+  .footer-btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 26px; }
+  footer .btn-primary { background: #24211A; color: #FFFFFF; border-color: #24211A; }
+  footer .btn-primary:hover { background: #3A3528; color: #FFFFFF; }
+  footer .btn-ghost { background: rgba(255,255,255,0.35); color: #24211A; border-color: rgba(36,33,26,0.3); }
+  footer .btn-ghost:hover { border-color: #24211A; color: #24211A; background: rgba(255,255,255,0.6); }
+  .footer-note { color: #4A4434; font-size: 13px; font-family: var(--mono); }
 
   .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
   .reveal.in { opacity: 1; transform: translateY(0); }
@@ -160,11 +186,18 @@
 </head>
 <body>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 4.887v6.31zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M2 5.5A1.5 1.5 0 013.5 4h17A1.5 1.5 0 0122 5.5v13a1.5 1.5 0 01-1.5 1.5h-17A1.5 1.5 0 012 18.5v-13zm2.2.5L12 11.6 19.8 6H4.2zM20 7.9l-7.42 5.31a1 1 0 01-1.16 0L4 7.9V18h16V7.9z"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M12 3a1 1 0 011 1v9.59l3.3-3.3a1 1 0 111.4 1.42l-5 5a1 1 0 01-1.4 0l-5-5a1 1 0 111.4-1.42l3.3 3.3V4a1 1 0 011-1zM5 19a1 1 0 100 2h14a1 1 0 100-2H5z"/></symbol>
+</svg>
+
 <nav>
   <div class="wrap">
     <div class="nav-name">Esha Hooda</div>
     <div class="nav-links">
-      <a href="#about">About</a>
+      <a href="#about" class="opt">About</a>
       <a href="#work">Work</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
@@ -174,16 +207,17 @@
 </nav>
 
 <header class="hero">
-  <div class="wrap" style="display:flex; gap:48px; align-items:center; flex-wrap:wrap;">
+  <div class="wrap hero-inner">
     <div class="hero-text">
-      <div class="eyebrow">Data Science (Minor in Statistics), San José State University, Graduation December 2027</div>
-      <div class="eyebrow-line2">Certificate: Fundamental AI Algorithms and Applications in Computer Science (expected completion: May 2027)</div>
-      <h1>I turn messy data into systems people actually use.</h1>
-      <p class="tagline">Data Science student building agentic AI, distributed pipelines, and the occasional product roadmap.</p>
+      <div class="open-pill"><span class="open-dot"></span>Open to Summer 2027 SWE, ML + data science internships</div>
+      <div class="eyebrow">B.S. Data Science · San José State University · Dec 2027</div>
+      <div class="eyebrow-line2">Minors in Statistics + Computer Science · Concentration in Public Health<br>Certificate: Fundamental AI Algorithms and Applications in Computer Science (expected May 2027)</div>
+      <h1>I build AI and software people can actually trust.</h1>
+      <p class="tagline">From backend code to models to the data pipelines underneath: agentic AI, RAG systems and distributed data engineering.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="Esha_Hooda_Resume.pdf" download>Download resume ↓</a>
-        <a class="btn btn-ghost" href="https://github.com/equivalentpay0910" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/esha-h/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-primary" href="Esha_Hooda_Resume.pdf" download><svg aria-hidden="true"><use href="#i-doc"/></svg>Download resume</a>
+        <a class="btn btn-ghost" href="https://github.com/equivalentpay0910" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/esha-h/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
       </div>
     </div>
     <div class="hero-photo">
@@ -196,15 +230,16 @@
   <div class="wrap reveal">
     <div class="section-head"><span class="section-num">01</span><h2>About</h2></div>
     <div class="about-text">
-      <p>I'm a Data Science student at San José State University, graduating December 2027, working at the intersection of machine learning, distributed data systems, and agentic AI. My most recent build is a full-stack AI agent on Anthropic's Claude tool-calling API, one that decides which tools to call and when rather than following a fixed script I wrote in advance.</p>
-      <p>Recent work also includes a Trust and Safety risk pipeline I'm currently building, and my ongoing role as an undergraduate research assistant at the SJSU Research Foundation, where I applied PCA and Factor Analysis (n=619) to validate a survey instrument and used hierarchical linear modeling on a 60,000-row student outcomes dataset to study equity in learning outcomes.</p>
-      <p>Before that, I interned as a Deep Learning Intern at Hewlett Packard Enterprise in Singapore, where I got hands-on with ANN, RNN, and GAN architectures and learned what it actually takes to move a model from a notebook to a deployment pipeline.</p>
-      <p>I also spend real time on the product side. I've served as both engineer and de facto PM on a team project, defining a feature roadmap and aligning stakeholders through weekly report-outs, and I'm comfortable in Figma, Jira, and Linear alongside a full data-analysis toolkit.</p>
+      <p>I'm a Data Science student at San José State University (minors in Statistics + Computer Science, graduating <strong>Dec 2027</strong>). I like building things people actually use, and I care most about making AI systems you can trust.</p>
+      <p>Right now I'm leading <strong>LegalBee</strong> at SJSU's Responsible Computing Club: a jurisdiction-aware <strong>RAG copilot</strong> that answers legal questions from government, court + legal-aid sources, with citations and explicit confidence signals. I'm also the team's de facto PM, setting the roadmap, running weekly sprints and keeping product, design + engineering in sync.</p>
+      <p>On the research side, I'm an ML Research Assistant on two projects: applying <strong>diffusion models (SR3)</strong> to video-rate fluorescence microscopy super-resolution, and building logistic regression, HLM and propensity score matching models on <strong>70K+ student records</strong> to evaluate SJSU's Learning Assistant Program.</p>
+      <p>Recent builds include a full-stack agent on <strong>Anthropic's Claude tool-calling API</strong> that decides on its own which tools to call and when, and a multimodal <strong>Trust &amp; Safety risk pipeline</strong>. Through a Stanford SALT Lab-affiliated program, I'm also hardening a tool-using agent and a RAG system against adversarial attacks.</p>
+      <p>Before all this, I was a <strong>Deep Learning Intern at Hewlett Packard Enterprise</strong> in Singapore, building ANN, RNN and GAN models, training a posture-detection model to <strong>93% accuracy</strong> and learning what it takes to move a model from a notebook to a deployment pipeline.</p>
     </div>
   </div>
 </section>
 
-<section id="work">
+<section id="work" class="alt">
   <div class="wrap reveal">
     <div class="section-head"><span class="section-num">02</span><h2>Selected work</h2></div>
 
@@ -213,8 +248,16 @@
         <div class="project-title">AI Job Application Tracker Agent</div>
         <a class="project-link" href="https://github.com/equivalentpay0910/job-tracker-agent" target="_blank" rel="noopener">github ↗</a>
       </div>
-      <div class="project-tools">Python · Flask · SQLite · Anthropic Claude API (tool-calling) · JavaScript · HTML/CSS</div>
-      <div class="project-desc">A full-stack agent that acts on the user's behalf: given a job posting, it autonomously decides which tools to call, parse the posting, fetch the resume, score fit, log the result, using Anthropic's Claude tool-calling API directly. Five-tool architecture, persisted conversation memory, and a scoring prompt written specifically to avoid inflating fit scores.</div>
+      <div class="project-tools">Python · Flask · SQLite · Anthropic Claude API (tool-calling) · RAG (embeddings + vector search) · JavaScript · HTML/CSS</div>
+      <div class="project-desc">A full-stack agent that acts on the user's behalf. Given a job posting, it decides on its own which tools to call: parse the posting, fetch the resume, score fit and log the result. <strong>Five-tool architecture</strong>, persisted conversation memory and a scoring prompt written specifically to avoid inflating fit scores.</div>
+    </div>
+
+    <div class="project">
+      <div class="project-top">
+        <div class="project-title">Trust &amp; Safety Risk Pipeline</div>
+      </div>
+      <div class="project-tools">Python · SQL · PySpark · XGBoost · Hugging Face Transformers · PyTorch · Docker</div>
+      <div class="project-desc">Multimodal AI risk-detection pipeline combining <strong>tabular fraud signals</strong>, <strong>NLP content classification</strong> and <strong>image risk detection</strong> into one unified risk score, <strong>A/B tested</strong> against a baseline model.</div>
     </div>
 
     <div class="project">
@@ -222,15 +265,15 @@
         <div class="project-title">Stock Volatility Prediction Pipeline</div>
       </div>
       <div class="project-tools">Python · PySpark · SQL · ETL · GCP · Pandas · Matplotlib · Seaborn · UNIX · Git</div>
-      <div class="project-desc">Distributed data pipeline processing 600,000+ daily trades across 500+ stocks on GCP. Served as both lead engineer and PM across several sprints: defined the feature roadmap, drove project vision, and aligned stakeholders through weekly report-outs and dashboards.</div>
+      <div class="project-desc">Distributed data pipeline processing <strong>600,000+ daily trades</strong> across <strong>500+ stocks</strong> on GCP. Served as both lead engineer and PM across several sprints: defined the feature roadmap, drove project vision and aligned stakeholders through weekly report-outs and dashboards.</div>
     </div>
 
     <div class="project">
       <div class="project-top">
         <div class="project-title">Fake News Detection Using LSTM &amp; BERT</div>
       </div>
-      <div class="project-tools">Python · TensorFlow/Keras · PyTorch · HuggingFace · Scikit-learn · NLTK · Git</div>
-      <div class="project-desc">Compared four NLP architectures on a 20,000-article dataset. Identified a source-style confound in the data that was silently inflating every model's score, the kind of issue that doesn't show up as a simple train-test gap, and recommended cross-source validation as follow-up.</div>
+      <div class="project-tools">Python · TensorFlow/Keras · PyTorch · Hugging Face · Scikit-learn · NLTK · Git</div>
+      <div class="project-desc">Compared <strong>four NLP architectures</strong>, including fine-tuned BERT, on a <strong>20,000-article dataset</strong>. Identified a source-style confound in the data that was silently inflating every model's score, the kind of issue that doesn't show up as a simple train-test gap, and recommended cross-source validation as a follow-up.</div>
     </div>
 
     <div class="project">
@@ -238,15 +281,15 @@
         <div class="project-title">Gaming Stats Dashboard &amp; Pricing Models</div>
       </div>
       <div class="project-tools">Python · NumPy · Pandas · Scikit-learn · Seaborn · Matplotlib · Git</div>
-      <div class="project-desc">Classification pipeline on 20K+ games to inform pricing decisions. Diagnosed a 2:1 class imbalance masking true model performance, models were catching only 16-18% of high-price games despite 69% headline accuracy, and recommended F1/recall over accuracy as the metric worth acting on.</div>
+      <div class="project-desc">Classification pipeline on <strong>20K+ games</strong> to inform pricing decisions. Diagnosed a <strong>2:1 class imbalance</strong> masking true model performance: models caught only 16–18% of high-price games despite 69% headline accuracy. Recommended F1 and recall as the metrics worth acting on.</div>
     </div>
 
     <div class="project">
       <div class="project-top">
         <div class="project-title">Recipe Management Database System</div>
       </div>
-      <div class="project-tools">MySQL · Flask · JavaScript · Flutter · Git</div>
-      <div class="project-desc">Full-stack CRUD application shipped end-to-end: normalized schemas, indexed queries, and RESTful API integration, with synthetic data generation to test analytics against realistic usage before real users touched it.</div>
+      <div class="project-tools">MySQL · Flask · JavaScript · Flutter · REST APIs · Git</div>
+      <div class="project-desc">Full-stack CRUD application shipped end to end: normalized schemas, indexed queries and <strong>RESTful API</strong> integration, with synthetic data generation to test analytics against realistic usage before real users touched it.</div>
     </div>
   </div>
 </section>
@@ -259,16 +302,16 @@
       <div class="tree-root-node">Experience</div>
     </div>
     <div class="tree-lines">
-      <svg viewBox="0 0 700 50" preserveAspectRatio="none">
+      <svg viewBox="0 0 700 50" preserveAspectRatio="none" aria-hidden="true">
         <defs>
           <marker id="treeArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-            <path d="M2 1L8 5L2 9" fill="none" stroke="#9C6F17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 1L8 5L2 9" fill="none" stroke="#E0A800" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </marker>
         </defs>
-        <path d="M 350 0 L 350 12" fill="none" stroke="#9C6F17" stroke-width="1.5"/>
-        <path d="M 350 12 L 90 12 L 90 44" fill="none" stroke="#9C6F17" stroke-width="1.5" marker-end="url(#treeArrow)"/>
-        <path d="M 350 12 L 350 44" fill="none" stroke="#9C6F17" stroke-width="1.5" marker-end="url(#treeArrow)"/>
-        <path d="M 350 12 L 610 12 L 610 44" fill="none" stroke="#9C6F17" stroke-width="1.5" marker-end="url(#treeArrow)"/>
+        <path d="M 350 0 L 350 12" fill="none" stroke="#E0A800" stroke-width="1.5"/>
+        <path d="M 350 12 L 90 12 L 90 44" fill="none" stroke="#E0A800" stroke-width="1.5" marker-end="url(#treeArrow)"/>
+        <path d="M 350 12 L 350 44" fill="none" stroke="#E0A800" stroke-width="1.5" marker-end="url(#treeArrow)"/>
+        <path d="M 350 12 L 610 12 L 610 44" fill="none" stroke="#E0A800" stroke-width="1.5" marker-end="url(#treeArrow)"/>
       </svg>
     </div>
 
@@ -276,80 +319,112 @@
       <div>
         <div class="branch-head">Technical</div>
         <div class="exp-item">
-          <div class="exp-top"><div class="exp-role">Deep Learning Intern</div></div>
-          <div class="exp-org">NUS &amp; Hewlett Packard Enterprise</div>
-          <div class="exp-date" style="margin-bottom:6px;">Dec 2022 – Jan 2023</div>
-          <div class="exp-desc">Designed and implemented ML and deep learning models including ANN, RNN, GAN, SVM, NLP, and time series architectures; gained hands-on experience with Azure deployment pipelines. Trained a posture-detection model to 93% accuracy.</div>
+          <div class="exp-role">Project Lead, LegalBee</div>
+          <div class="exp-org">Responsible Computing Club, SJSU</div>
+          <div class="exp-date">Sep 2026 – Present</div>
+          <div class="exp-desc">Leading development of a jurisdiction-aware <strong>RAG copilot</strong> that answers legal questions from government, court + legal-aid sources with <strong>citations</strong> and explicit <strong>confidence signals</strong>. First vertical: California tenant law, with retrieval-accuracy and hallucination-rate evaluation built in from the start.</div>
         </div>
         <div class="exp-item">
-          <div class="exp-top"><div class="exp-role">Learning Assistant</div></div>
+          <div class="exp-role">Deep Learning Intern</div>
+          <div class="exp-org">Hewlett Packard Enterprise · Singapore</div>
+          <div class="exp-date">Dec 2022 – Jan 2023</div>
+          <div class="exp-desc">Designed and implemented ML and deep learning models including <strong>ANN, RNN, GAN</strong>, SVM, NLP and time series architectures, with hands-on experience in <strong>Azure deployment pipelines</strong>. Trained and optimized a posture-detection model to <strong>93% accuracy</strong> through architecture tuning and iterative experimentation.</div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-role">Learning Assistant</div>
           <div class="exp-org">Peer Connections, SJSU</div>
-          <div class="exp-date" style="margin-bottom:6px;">Jan 2025 – Jan 2026</div>
-          <div class="exp-desc">Mentored 250+ students in math and CS through strong communication and cross-functional collaboration with professors and peer tutors; earned CRLA Level 1 &amp; 2 certification.</div>
+          <div class="exp-date">Jan 2025 – Jan 2026</div>
+          <div class="exp-desc">Mentored <strong>250+ students</strong> in Math and CS courses through weekly in-class workshops and small-group problem solving, and co-designed equity-focused learning activities with professors. Earned <a href="https://badges.parchment.com/public/issuers/qXhkzIn4Qm6-VRX4kEX2ng/badges" target="_blank" rel="noopener">CRLA International Peer Educator Training Certification, Levels 1 &amp; 2</a>, and completed SCED 174: Science Pedagogy for Learning Assistants.</div>
         </div>
       </div>
 
       <div>
         <div class="branch-head">Research</div>
         <div class="exp-item">
-          <div class="exp-top"><div class="exp-role">Undergraduate Research Assistant</div></div>
-          <div class="exp-org">Research Foundation, SJSU</div>
-          <div class="exp-date" style="margin-bottom:6px;">May 2025 – Present</div>
-          <div class="exp-desc">Applied PCA and Factor Analysis (n=619) to validate three subscales of a survey instrument. Used hierarchical linear modeling on a 60,000-row student outcomes dataset to quantify the LA model's impact on equity in learning outcomes; manuscript underway.</div>
+          <div class="exp-role">Machine Learning Research Assistant</div>
+          <div class="exp-org">San José State University</div>
+          <div class="exp-date">Oct 2026 – Present</div>
+          <div class="exp-desc">Applying <strong>diffusion models (SR3</strong>, Image Super-Resolution via Iterative Refinement<strong>)</strong> to video-rate fluorescence microscopy super-resolution, replacing the <strong>GAN-based</strong> approach from a 2020 IEEE BIBE paper that serves as the project baseline.</div>
         </div>
         <div class="exp-item">
-          <div class="exp-top"><div class="exp-role">Computer Vision Research (Proposed)</div></div>
-          <div class="exp-org">SJSU Faculty Research</div>
-          <div class="exp-desc">Project proposal underway, quantifying the impact of traffic cameras on decreasing accident rate and severity.</div>
+          <div class="exp-role">Machine Learning Research Assistant</div>
+          <div class="exp-org">SJSU Research Foundation</div>
+          <div class="exp-date">May 2025 – Present</div>
+          <div class="exp-desc">Evaluating the impact of SJSU's Learning Assistant Program on <strong>70K+ student outcome records</strong> (2016–present). Build <strong>logistic regression, OLS with course fixed effects, hierarchical linear models (HLM)</strong> and <strong>propensity score matching</strong> in Python (pandas, NumPy, scikit-learn); validate survey subscales with <strong>PCA</strong>, factor analysis and Cronbach's alpha; maintain research databases. Manuscript for publication underway.</div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-role">AI Upskilling Research Program</div>
+          <div class="exp-org">Stanford SALT Lab-affiliated</div>
+          <div class="exp-date">Sep 2026 – Present</div>
+          <div class="exp-desc">Building a <strong>tool-using AI agent</strong> and a <strong>RAG document-search system</strong>, then hardening both against <strong>adversarial attacks</strong>. Developing an evaluation suite and a <strong>CI regression gate</strong> to catch AI regressions before they ship, and deploying a model server into a secured private cloud network.</div>
         </div>
       </div>
 
       <div>
         <div class="branch-head">Leadership</div>
         <div class="exp-item">
-          <div class="exp-top"><div class="exp-role">Outreach Lead</div></div>
-          <div class="exp-org">Peer Connections, SJSU</div>
-          <div class="exp-date" style="margin-bottom:6px;">May 2025 – Jan 2026</div>
-          <div class="exp-desc">Scaled a major initiative from 0 to 3,000 participants in 2 months by redesigning internal processes and building SQL-based tracking systems while coordinating a team of 120+.</div>
+          <div class="exp-role">Project Lead, LegalBee</div>
+          <div class="exp-org">Responsible Computing Club, SJSU</div>
+          <div class="exp-date">Sep 2026 – Present</div>
+          <div class="exp-desc">Acting as de facto <strong>project manager</strong>: setting the roadmap and sprint priorities, delegating workstreams and running <strong>weekly check-ins</strong> to keep product, design + engineering moving in sync.</div>
         </div>
         <div class="exp-item">
-          <div class="exp-top"><div class="exp-role">Vice President</div></div>
+          <div class="exp-role">Outreach Lead</div>
+          <div class="exp-org">Peer Connections, SJSU</div>
+          <div class="exp-date">May 2025 – Jan 2026</div>
+          <div class="exp-desc">Scaled a major campus initiative from <strong>0 to 3,000 participants in 2 months</strong> by redesigning internal processes and building SQL-based tracking systems while coordinating a team of <strong>120+</strong>.</div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-role">Vice President</div>
           <div class="exp-org">Math Club, SJSU</div>
-          <div class="exp-date" style="margin-bottom:6px;">Oct 2025 – Mar 2026</div>
-          <div class="exp-desc">Organized weekly problem-solving events and partnered with faculty to promote engagement in mathematics.</div>
+          <div class="exp-date">Oct 2025 – Mar 2026</div>
+          <div class="exp-desc">Organized <strong>weekly</strong> problem-solving events and partnered with faculty to grow engagement in mathematics.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="skills">
+<section id="skills" class="alt">
   <div class="wrap reveal">
     <div class="section-head"><span class="section-num">04</span><h2>Skills</h2></div>
     <div class="skill-groups">
       <div>
-        <div class="skill-group-title">Languages, Frameworks &amp; Cloud</div>
+        <div class="skill-group-title">Languages</div>
         <div class="skill-tags">
           <span class="skill-tag">Python</span><span class="skill-tag">SQL</span>
-          <span class="skill-tag">PyTorch</span><span class="skill-tag">TensorFlow</span>
-          <span class="skill-tag">Scikit-learn</span><span class="skill-tag">PySpark</span>
-          <span class="skill-tag">Flask</span><span class="skill-tag">GCP</span>
-          <span class="skill-tag">Git</span><span class="skill-tag">MySQL</span>
+          <span class="skill-tag">R</span><span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Java</span><span class="skill-tag">C++</span>
+          <span class="skill-tag">HTML/CSS</span>
         </div>
       </div>
       <div>
-        <div class="skill-group-title">AI Tools</div>
+        <div class="skill-group-title">ML &amp; Data</div>
         <div class="skill-tags">
-          <span class="skill-tag">Claude API (tool-calling)</span><span class="skill-tag">Claude Code</span>
+          <span class="skill-tag">PyTorch</span><span class="skill-tag">TensorFlow/Keras</span>
+          <span class="skill-tag">Hugging Face Transformers</span><span class="skill-tag">Scikit-learn</span>
+          <span class="skill-tag">XGBoost</span><span class="skill-tag">Pandas</span>
+          <span class="skill-tag">NumPy</span><span class="skill-tag">PySpark</span>
+          <span class="skill-tag">ETL</span>
+        </div>
+      </div>
+      <div>
+        <div class="skill-group-title">Backend, Cloud &amp; DevOps</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Flask</span><span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">MySQL</span><span class="skill-tag">SQLite</span>
+          <span class="skill-tag">Docker</span><span class="skill-tag">GCP</span>
+          <span class="skill-tag">Azure</span><span class="skill-tag">Git</span>
+          <span class="skill-tag">UNIX</span><span class="skill-tag">CI</span>
+        </div>
+      </div>
+      <div>
+        <div class="skill-group-title">AI Engineering</div>
+        <div class="skill-tags">
+          <span class="skill-tag">RAG</span><span class="skill-tag">LLM Agents &amp; Tool-calling</span>
+          <span class="skill-tag">Embeddings + Vector Search</span><span class="skill-tag">LLM Evaluation</span>
+          <span class="skill-tag">Claude API</span><span class="skill-tag">Claude Code</span>
           <span class="skill-tag">GitHub Copilot</span>
-        </div>
-      </div>
-      <div>
-        <div class="skill-group-title">Product &amp; Data Tools</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Figma</span><span class="skill-tag">Sketch</span>
-          <span class="skill-tag">Jira</span><span class="skill-tag">Linear</span>
-          <span class="skill-tag">Google Analytics</span><span class="skill-tag">Optimizely</span>
         </div>
       </div>
       <div>
@@ -360,12 +435,21 @@
         </div>
       </div>
       <div>
+        <div class="skill-group-title">Product</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Figma</span><span class="skill-tag">Jira</span>
+          <span class="skill-tag">Linear</span><span class="skill-tag">Google Analytics</span>
+          <span class="skill-tag">Optimizely</span>
+        </div>
+      </div>
+      <div>
         <div class="skill-group-title">Certifications</div>
         <div class="skill-tags">
+          <span class="skill-tag">Fundamental AI Algorithms &amp; Applications (expected May 2027)</span>
           <span class="skill-tag">Machine Learning &amp; AI, IIT Bombay/Madras</span>
           <span class="skill-tag">Code in Place, Stanford</span>
           <span class="skill-tag">IRB Research Training</span>
-          <span class="skill-tag">CRLA Level 1 &amp; 2</span>
+          <a class="skill-tag" href="https://badges.parchment.com/public/issuers/qXhkzIn4Qm6-VRX4kEX2ng/badges" target="_blank" rel="noopener">CRLA Level 1 &amp; 2 ↗</a>
         </div>
       </div>
     </div>
@@ -374,23 +458,28 @@
 
 <footer id="contact">
   <div class="wrap reveal">
-    <p class="footer-cta">If you're building something, I'd love to talk about how I can contribute. Let's connect.</p>
-    <div class="footer-links">
-      <a href="mailto:esha.hooda@sjsu.edu">esha.hooda@sjsu.edu</a>
-      <a href="https://www.linkedin.com/in/esha-h/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/equivalentpay0910" target="_blank" rel="noopener">GitHub</a>
-      <a href="Esha_Hooda_Resume.pdf" download>Resume</a>
+    <h2>Let's build something.</h2>
+    <p class="footer-cta">I'm looking for <strong style="color:#24211A">Summer 2027 SWE, ML + data science internships</strong>. If your team is building something, I'd love to hear about it.</p>
+    <div class="footer-btns">
+      <a class="btn btn-primary" href="mailto:esha.hooda@sjsu.edu"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email me</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/esha-h/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/equivalentpay0910" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
+      <a class="btn btn-ghost" href="Esha_Hooda_Resume.pdf" download><svg aria-hidden="true"><use href="#i-doc"/></svg>Resume</a>
     </div>
-    <div class="footer-note">SF Bay Area · Seeking Summer 2027 internships in ML/AI/Data Science and Product Management</div>
+    <div class="footer-note">esha.hooda@sjsu.edu · SF Bay Area</div>
   </div>
 </footer>
 
 <script>
   const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-  }, { threshold: 0.12 });
-  revealEls.forEach(el => io.observe(el));
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.08 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
 </script>
 
 </body>
